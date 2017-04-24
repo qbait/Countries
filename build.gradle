@@ -1,0 +1,53 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+        classpath "io.realm:realm-gradle-plugin:0.91.0"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    minSdk = 14
+    targetSdk = 25
+    buildToolsVersion = '25.0.2'
+    compileSdkVersion = 25
+
+    javaSourceCompatibility = JavaVersion.VERSION_1_7
+    javaTargetCompatibility = JavaVersion.VERSION_1_7
+
+    // Libraries
+    supportLibVersion = '25.3.1'
+    contraintLayoutVersion = '1.0.2'
+    daggerVersion = '2.0.2'
+    mosbyVersion = '3.0.2'
+    jsr250Version = '1.0'
+    rxjavaVersion = '2.0.8'
+    rxandroidVersion = '2.0.1'
+    adapterRxjava2Version = '2.2.0'
+    gsonVersion = '2.6.2'
+    converterGsonVersion = '2.0.1'
+    timberVersion = '4.5.1'
+    parcelerVersion = '1.1.6'
+    picassoVersion = '2.5.2'
+
+    // Test Libs
+    junitVersion = '4.12'
+    espressoVersion = '2.2.2'
+    mockitoVersion = '2.7.22'
+}
